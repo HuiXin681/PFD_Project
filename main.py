@@ -28,6 +28,41 @@ def testcase1():
         chrmDriver.close()
         print('Unsuccessful login')
 
+
+def testcase3():
+    driver = webdriver.Chrome()
+    driver.get("https://localhost:5001/Product/ProductDetail/1")
+    driver.find_element(By.ID, 'update').click()
+
+    price = driver.find_element(By.XPATH, "//input[@name='Price']")
+    price.clear()
+    price.send_keys('462')
+
+    productTitle = driver.find_element(By.ID,'ProductTitle')
+    productTitle.clear()
+    productTitle.send_keys('heloo')
+
+    
+
+    try:
+        driver.find_element(By.XPATH,
+            "//input[@type='submit' and @value='Save']").click()
+        driver.save_screenshot("EditSuccessScreenShot.png")
+        f = open('hello.txt', 'a')
+        f.writelines('Successfull edit')
+        f.close
+        driver.close()
+        print("Successfull edit")
+    except Exception as e:
+
+        driver.save_screenshot("EditUnSuccessScreenShot.png")
+        f = open('hello.txt', 'a')
+        f.writelines('Unsccessfull edit')
+        f.close
+        driver.close()
+        print("Unsuccessfull edit")
+
+
 # Test Case 4 : Obsolete button
 def testcase4():
     chrmDriver = webdriver.Chrome()
@@ -53,6 +88,7 @@ def testcase4():
 
 if __name__ == '__main__':
     testcase1()
+    testcase3()
     testcase4()
 
 
