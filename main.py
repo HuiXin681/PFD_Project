@@ -36,7 +36,7 @@ def testcase3():
 
     price = driver.find_element(By.XPATH, "//input[@name='Price']")
     price.clear()
-    price.send_keys(462)
+    price.send_keys(140)
 
     productTitle = driver.find_element(By.ID,'ProductTitle')
     productTitle.clear()
