@@ -28,10 +28,10 @@ def testcase1():
         chrmDriver.close()
         print('Unsuccessful login')
 
-
+# Test Case 3 : Edit
 def testcase3():
     driver = webdriver.Chrome()
-    driver.get("https://localhost:5001/Product/ProductDetail/1")
+    driver.get("https://localhost:44323/Product/ProductDetail/1")
     driver.find_element(By.ID, 'update').click()
 
     price = driver.find_element(By.XPATH, "//input[@name='Price']")

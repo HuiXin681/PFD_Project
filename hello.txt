@@ -26,4 +26,31 @@ Backtrace:
 	RtlClearBits [0x77CCBABF+191]
 	(No symbol) [0x00000000]
  
-Successfull edit
+Successfull editUnsuccessful login error:Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@type='submit' and @value='Submit123']"}
+  (Session info: chrome=107.0.5304.88)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0039ACD3+2075859]
+	Ordinal0 [0x0032EE61+1633889]
+	Ordinal0 [0x0022B7BD+571325]
+	Ordinal0 [0x0025AC2F+764975]
+	Ordinal0 [0x0025AE1B+765467]
+	Ordinal0 [0x0028D0F2+970994]
+	Ordinal0 [0x00277364+881508]
+	Ordinal0 [0x0028B56A+963946]
+	Ordinal0 [0x00277136+880950]
+	Ordinal0 [0x0024FEFD+720637]
+	Ordinal0 [0x00250F3F+724799]
+	GetHandleVerifier [0x0064EED2+2769538]
+	GetHandleVerifier [0x00640D95+2711877]
+	GetHandleVerifier [0x0042A03A+521194]
+	GetHandleVerifier [0x00428DA0+516432]
+	Ordinal0 [0x0033682C+1665068]
+	Ordinal0 [0x0033B128+1683752]
+	Ordinal0 [0x0033B215+1683989]
+	Ordinal0 [0x00346484+1729668]
+	BaseThreadInitThunk [0x76537BA9+25]
+	RtlInitializeExceptionChain [0x77CCBB3B+107]
+	RtlClearBits [0x77CCBABF+191]
+ 
+Successfull editSuccessful Clicking Obsolete 
