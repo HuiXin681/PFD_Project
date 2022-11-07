@@ -28,8 +28,53 @@ def testcase1():
         chrmDriver.close()
         print('Unsuccessful login')
 
-# Test Case 3 : Edit
-def testcase3():
+# Test Case 5 : Unsuccessful Product creation
+def testcase5():
+    driver = webdriver.Chrome()
+    driver.get("https://localhost:44323/Product/CreateProducts")
+
+    price = driver.find_element(By.ID, "price")
+    price.send_keys("dggf")
+    print(price.get_attribute("validationMessage"))
+
+    driver.close
+
+
+# Test Case 7 : Unsuccessful Product Edit
+def testcase7():
+    driver = webdriver.Chrome()
+    driver.get("https://localhost:44323/Product/ProductDetail/1")
+    driver.find_element(By.ID, 'update').click()
+
+    productId = driver.find_element(By.XPATH, "//input[@name='ProductId']")
+    date = driver.find_element(By.ID,'EffectiveDate')
+
+    try: 
+        productId.clear()
+        productId.send_keys(4)
+        driver.close
+        print("Error; Product ID is editable \n")
+
+    except Exception:
+        f = open('hello.txt', 'a')
+        driver.close
+        f.writelines('Product ID is static \n')
+        print("Product ID is read only")
+
+    try:
+        date.clear()
+        driver.close
+        print("Error; date of the product is editable \n")
+    except Exception:
+        f = open('hello.txt', 'a')
+        driver.close
+        f.writelines('Date is static \n')
+        print("Product date is read only")
+
+        
+
+# Test Case 8 : Edit product
+def testcase8():
     driver = webdriver.Chrome()
     driver.get("https://localhost:44323/Product/ProductDetail/1")
     driver.find_element(By.ID, 'update').click()
@@ -49,7 +94,7 @@ def testcase3():
             "//input[@type='submit' and @value='Save']").click()
         driver.save_screenshot("EditSuccessScreenShot.png")
         f = open('hello.txt', 'a')
-        f.writelines('Successfull edit')
+        f.writelines('Successfull edit \n')
         f.close
         driver.close()
         print("Successfull edit")
@@ -57,7 +102,7 @@ def testcase3():
 
         driver.save_screenshot("EditUnSuccessScreenShot.png")
         f = open('hello.txt', 'a')
-        f.writelines('Unsccessfull edit')
+        f.writelines('Unsccessfull edit:{str(e)} \n')
         f.close
         driver.close()
         print("Unsuccessfull edit")
@@ -87,9 +132,7 @@ def testcase4():
 
 
 if __name__ == '__main__':
-    testcase1()
-    testcase3()
-    testcase4()
+    testcase7()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
