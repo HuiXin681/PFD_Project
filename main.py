@@ -39,7 +39,6 @@ def testcase5():
 
     driver.close
 
-
 # Test Case 7 : Unsuccessful Product Edit
 def testcase7():
     driver = webdriver.Chrome()
@@ -70,9 +69,7 @@ def testcase7():
         driver.close
         f.writelines('Date is static \n')
         print("Product date is read only")
-
-        
-
+      
 # Test Case 8 : Edit product
 def testcase8():
     driver = webdriver.Chrome()
@@ -107,7 +104,6 @@ def testcase8():
         driver.close()
         print("Unsuccessfull edit")
 
-
 # Test Case 4 : Obsolete button
 def testcase4():
     chrmDriver = webdriver.Chrome()
@@ -130,9 +126,28 @@ def testcase4():
         chrmDriver.close()
         print('Unsuccessful Clicking Obsolete ')
 
+#Test case 3 : Check image upload error message
+def testCase3():
+    driver = webdriver.Chrome()
+    driver.get("https://localhost:44323/Product/CreateProducts")
+    driver.find_element(By.XPATH, "//input[@type='submit' and @value='Create']").click()
+    driver.save_screenshot("TestCase3.png")
+    print("Done")
+
+#Test case 4 : Check input boxes error message
+def testCase4():
+    path = "C:/Users/Angmi/OneDrive/Desktop/PFD/PFD selenium code/"
+    driver = webdriver.Chrome()
+    driver.get("https://localhost:44323/Product/CreateProducts")
+    pic = driver.find_element(By.CLASS_NAME,'upload').find_element(By.CSS_SELECTOR,'input')
+    pic.send_keys(path + "TestCase3.png")
+    driver.find_element(By.XPATH, "//input[@type='submit' and @value='Create']").click()
+    driver.save_screenshot("TestCase4.png")
+    print("Done")
 
 if __name__ == '__main__':
-    testcase7()
+    testCase3()
+    testCase4()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
